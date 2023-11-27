@@ -1,4 +1,4 @@
-# GUI-Windows-product-store-application-python V 1.0 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+# GUI-Windows-product-store-application-Python V 1.0 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 Python GUI program for a simple Windows product store application.  
 using Python version 3.12.0 and PyQt5 library (Qt Designer)  
 
