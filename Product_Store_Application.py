@@ -5104,7 +5104,7 @@ class Ui_Form(object):
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.PlaceholderText, brush)
         self.lineEdit_9.setPalette(palette)
-        self.lineEdit_9.setReadOnly(True)
+        self.lineEdit_9.setReadOnly(True)   
         self.lineEdit_9.setObjectName("lineEdit_9")
         self.lineEdit_10 = QtWidgets.QLineEdit(Form)
         self.lineEdit_10.setGeometry(QtCore.QRect(20, 800, 221, 31))
@@ -6280,6 +6280,26 @@ class Ui_Form(object):
         file.write(w2+'\n')
         file.write("End")
         file.close()
+####================================================================================================= calculator
+    def calculate(self):
+        text = self.lineEdit_9.text()
+        result = eval(text)
+        self.lineEdit_9.setText(str(result))
+
+
+    def show_Item(self, item):
+        if item == "Clear":
+            self.lineEdit_9.setText("")
+        elif item == "<---":
+            old_Text = str(self.lineEdit_9.text())
+            new_Text = old_Text[:-1]
+            # remove last character
+
+            self.lineEdit_9.setText(new_Text)
+        else:
+            self.lineEdit_9.setText
+            old_Text = self.lineEdit_9.text()
+            self.lineEdit_9.setText(old_Text + str(item))
 ####============================================================================================================
 ####============================================================================================================
 
@@ -6443,6 +6463,26 @@ class Ui_Form(object):
         self.pushButton_12.clicked.connect(lambda : self.tableWidget.clear())
 ####============================================== connect calculate_Total_Price function to click on table item
         self.pushButton_11.clicked.connect(lambda : self.calculate_Total_Price())
+####=========================================================== connect = button calculate to calculate function
+        self.pushButton_22.clicked.connect(lambda : self.calculate())
+####==================================================================================== calculator push buttons
+        self.pushButton_33.clicked.connect(lambda : self.show_Item(1))
+        self.pushButton_32.clicked.connect(lambda : self.show_Item(2))
+        self.pushButton_31.clicked.connect(lambda : self.show_Item(3))
+        self.pushButton_30.clicked.connect(lambda : self.show_Item(4))
+        self.pushButton_29.clicked.connect(lambda : self.show_Item(5))
+        self.pushButton_28.clicked.connect(lambda : self.show_Item(6))
+        self.pushButton_27.clicked.connect(lambda : self.show_Item(7))
+        self.pushButton_26.clicked.connect(lambda : self.show_Item(8))
+        self.pushButton_25.clicked.connect(lambda : self.show_Item(9))
+        self.pushButton_20.clicked.connect(lambda : self.show_Item(0))
+        self.pushButton_17.clicked.connect(lambda : self.show_Item("<---"))
+        self.pushButton_16.clicked.connect(lambda : self.show_Item("/"))
+        self.pushButton_23.clicked.connect(lambda : self.show_Item("+"))
+        self.pushButton_24.clicked.connect(lambda : self.show_Item("Clear"))
+        self.pushButton_18.clicked.connect(lambda : self.show_Item("-"))
+        self.pushButton_21.clicked.connect(lambda : self.show_Item("."))
+        self.pushButton_19.clicked.connect(lambda : self.show_Item("*"))
 ####=================================================== check whether lines are not emoty to add product by name
     def   check(self, class1_1):
         product_Name, product_Code = class1_1.check_Line() 
