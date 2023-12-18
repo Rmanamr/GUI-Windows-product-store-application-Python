@@ -1,6 +1,6 @@
 """Python GUI program for a simple Windows product store application.
 using Python version 3.12.0 and PyQt5 library (Qt Designer)
-@version : 1.0
+@version : 1.1
 @license: MIT License
 @author : Arman Azarnik
 contact me at : armanazarnik@gmail.com
